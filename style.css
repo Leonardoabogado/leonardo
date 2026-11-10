@@ -1,4 +1,8 @@
 
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,29 +23,44 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--navy);
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, .logo {
     font-family: 'Playfair Display', serif;
 }
 
-/* NAVBAR */
+a {
+    transition: all .3s ease;
+}
+
+html {
+    scroll-padding-top: 20px;
+}
+
+/* =====================================
+   NAVEGACIÓN
+===================================== */
 
 header {
     background: var(--navy);
     padding: 20px 8%;
+    position: relative;
+    z-index: 10;
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 25px;
 }
 
 .logo {
     font-size: 28px;
-    color: white;
+    color: var(--white);
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -56,8 +75,8 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
-    transition: .3s;
+    color: var(--white);
+    font-size: 15px;
 }
 
 .nav-links a:hover {
@@ -69,7 +88,7 @@ header {
     border: 1px solid var(--gold);
     padding: 10px 20px;
     text-decoration: none;
-    transition: .3s;
+    white-space: nowrap;
 }
 
 .nav-button:hover {
@@ -77,12 +96,18 @@ header {
     color: var(--navy);
 }
 
-/* HERO */
+/* =====================================
+   PORTADA PRINCIPAL
+===================================== */
 
 .hero {
     min-height: 600px;
+
     background:
-        linear-gradient(rgba(10, 23, 37, .88), rgba(10, 23, 37, .88)),
+        linear-gradient(
+            rgba(10, 23, 37, .88),
+            rgba(10, 23, 37, .88)
+        ),
         url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85');
 
     background-size: cover;
@@ -90,8 +115,9 @@ header {
 
     display: flex;
     align-items: center;
+
     padding: 80px 10%;
-    color: white;
+    color: var(--white);
 }
 
 .hero-content {
@@ -125,6 +151,8 @@ header {
     flex-wrap: wrap;
 }
 
+/* BOTONES */
+
 .btn-primary,
 .btn-secondary {
     display: inline-block;
@@ -143,25 +171,30 @@ header {
 
 .btn-primary:hover {
     background: #e0bd7b;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid var(--white);
+    color: var(--white);
 }
 
 .btn-secondary:hover {
-    background: white;
+    background: var(--white);
     color: var(--navy);
 }
 
-/* SECTIONS */
+/* =====================================
+   SECCIONES GENERALES
+===================================== */
 
 .section {
     padding: 100px 10%;
 }
 
-/* ABOUT */
+/* =====================================
+   SOBRE MÍ
+===================================== */
 
 .about {
     display: grid;
@@ -170,16 +203,41 @@ header {
     gap: 70px;
 }
 
+.about-image {
+    width: 100%;
+}
+
 .image-placeholder {
     min-height: 400px;
-    background: linear-gradient(135deg, #24384c, #101d2c);
+
+    background: linear-gradient(
+        135deg,
+        #24384c,
+        #101d2c
+    );
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     color: var(--gold);
     letter-spacing: 2px;
+
+    border-bottom: 6px solid var(--gold);
+    overflow: hidden;
+}
+
+/* PARA INCORPORAR TU FOTOGRAFÍA:
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
     border-bottom: 6px solid var(--gold);
 }
+
+*/
 
 .about-content h2,
 .section-heading h2,
@@ -198,7 +256,9 @@ header {
     margin-top: 10px;
 }
 
-/* SERVICES */
+/* =====================================
+   SERVICIOS JURÍDICOS
+===================================== */
 
 .services {
     background: var(--light);
@@ -215,27 +275,29 @@ header {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 22px;
 }
 
 .service-card {
-    background: white;
+    background: var(--white);
     padding: 35px 25px;
     border-bottom: 3px solid transparent;
     transition: .3s;
-    box-shadow: 0 5px 25px rgba(0,0,0,.04);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .04);
 }
 
 .service-card:hover {
     transform: translateY(-8px);
     border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 }
 
 .service-icon {
     color: var(--gold);
     font-size: 40px;
     margin-bottom: 20px;
+    line-height: 1;
 }
 
 .service-card h3 {
@@ -246,19 +308,26 @@ header {
 .service-card p {
     color: var(--gray);
     font-size: 14px;
+    line-height: 1.7;
 }
 
-/* CONTACT */
+/* =====================================
+   CONTACTO
+===================================== */
 
 .contact {
     background: var(--navy);
-    color: white;
+    color: var(--white);
     text-align: center;
 }
 
 .contact-content {
     max-width: 650px;
     margin: auto;
+}
+
+.contact h2 {
+    color: var(--white);
 }
 
 .contact-content > p:not(.subtitle) {
@@ -277,10 +346,17 @@ header {
     width: 100%;
     padding: 16px;
     border: 1px solid #405064;
-    background: #1c3045;
-    color: white;
+    background: var(--navy-light);
+    color: var(--white);
     font-family: inherit;
+    font-size: 15px;
     outline: none;
+    border-radius: 0;
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 130px;
 }
 
 .contact input:focus,
@@ -295,15 +371,18 @@ header {
 
 .contact button {
     font-family: inherit;
+    font-size: 15px;
 }
 
-/* FOOTER */
+/* =====================================
+   PIE DE PÁGINA
+===================================== */
 
 footer {
     background: #0a1420;
     padding: 40px 10%;
     text-align: center;
-    color: white;
+    color: var(--white);
 }
 
 .footer-content p {
@@ -316,43 +395,66 @@ footer {
     margin-top: 25px !important;
 }
 
-/* WHATSAPP */
+/* =====================================
+   BOTÓN WHATSAPP
+===================================== */
 
 .whatsapp {
     position: fixed;
     bottom: 25px;
     right: 25px;
     background: #25d366;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     padding: 13px 20px;
     border-radius: 50px;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
     z-index: 100;
 }
 
 .whatsapp:hover {
     background: #1eae54;
+    transform: translateY(-3px);
 }
 
-/* RESPONSIVE */
+/* =====================================
+   TABLETAS
+===================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+
+    header {
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .about {
         gap: 35px;
     }
 
-    .nav-links {
-        gap: 15px;
+    .section {
+        padding: 80px 7%;
     }
 }
 
+/* =====================================
+   CELULARES
+===================================== */
+
 @media (max-width: 650px) {
+
     header {
         padding: 20px 5%;
     }
@@ -362,10 +464,18 @@ footer {
         gap: 20px;
     }
 
+    .logo {
+        font-size: 26px;
+    }
+
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
     }
 
     .nav-button {
@@ -375,10 +485,24 @@ footer {
     .hero {
         min-height: 550px;
         padding: 60px 7%;
+        background-position: center;
     }
 
     .hero h1 {
         font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons a {
+        text-align: center;
     }
 
     .section {
@@ -387,6 +511,7 @@ footer {
 
     .about {
         grid-template-columns: 1fr;
+        gap: 35px;
     }
 
     .image-placeholder {
@@ -395,11 +520,51 @@ footer {
 
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 25px;
     }
 
     .about-content h2,
     .section-heading h2,
     .contact h2 {
         font-size: 31px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .whatsapp {
+        bottom: 18px;
+        right: 15px;
+        padding: 12px 17px;
+        font-size: 14px;
+    }
+}
+
+/* =====================================
+   ACCESIBILIDAD
+===================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
