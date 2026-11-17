@@ -14,13 +14,15 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
+    margin: 0;
     color: var(--text);
     background: var(--white);
     font-family: "Roboto", sans-serif;
@@ -99,7 +101,7 @@ header {
 }
 
 /* =====================================
-   PORTADA
+   PORTADA PRINCIPAL
 ===================================== */
 
 .hero {
@@ -151,10 +153,6 @@ h1, h2, h3 {
     margin-top: 32px;
 }
 
-/* =====================================
-   BOTONES
-===================================== */
-
 .btn-primary,
 .btn-secondary {
     display: inline-block;
@@ -185,12 +183,16 @@ h1, h2, h3 {
 }
 
 /* =====================================
-   SECCIÓN SOBRE MÍ
+   SECCIONES GENERALES
 ===================================== */
 
 .section {
     padding: 95px 5%;
 }
+
+/* =====================================
+   SOBRE MÍ Y FOTOGRAFÍA
+===================================== */
 
 .about {
     width: min(1160px, 100%);
@@ -201,48 +203,36 @@ h1, h2, h3 {
     gap: 70px;
 }
 
-/* CONTENEDOR DE LA FOTOGRAFÍA */
+/* Contenedor de la fotografía */
 
 .about-image {
     width: 100%;
-    min-width: 0;
-    min-height: 0;
-    height: auto;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* FOTOGRAFÍA CON BORDE DORADO */
-
-.lawyer-photo {
-    display: block;
-    width: auto;
-    height: 400px;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: center;
-    border: 2px solid var(--gold);
-    padding: 0;
-    margin: 0;
     background: transparent;
+    border: none;
+    padding: 0;
     box-shadow: none;
 }
 
-/* ELIMINAR CUALQUIER RECUADRO ANTERIOR */
+/* Fotografía en computador */
+
+.lawyer-photo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 430px;
+    object-fit: contain;
+    object-position: center;
+    border: 2px solid var(--gold);
+}
+
+/* Ocultar el antiguo espacio de imagen */
 
 .image-placeholder {
     display: none !important;
-    background: none !important;
-    border: none !important;
 }
-
-/* TEXTO SOBRE MÍ */
 
 .about-content h2,
 .section-heading h2,
@@ -344,14 +334,6 @@ h1, h2, h3 {
     color: #d2d9e2;
 }
 
-.contact-details a {
-    color: var(--gold);
-}
-
-.contact-details a:hover {
-    text-decoration: underline;
-}
-
 form {
     display: grid;
     gap: 14px;
@@ -433,7 +415,7 @@ footer {
 }
 
 /* =====================================
-   TABLET
+   TABLETAS Y PANTALLAS MEDIANAS
 ===================================== */
 
 @media (max-width: 800px) {
@@ -463,15 +445,13 @@ footer {
 
     .about-image {
         width: 100%;
-        min-height: 0;
-        padding: 0;
-        margin: 0;
-        background: transparent !important;
     }
 
     .lawyer-photo {
-        height: 350px;
+        height: 370px;
+        width: 100%;
         max-width: 100%;
+        object-fit: contain;
     }
 
     .services-grid {
@@ -516,18 +496,26 @@ footer {
         padding: 70px 6%;
     }
 
+    /* Fotografía un poco más grande en celular */
+
+    .about {
+        gap: 28px;
+    }
+
     .about-image {
         width: 100%;
-        padding: 0;
-        margin: 0;
-        background: transparent !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .lawyer-photo {
-        height: auto;
-        max-height: 330px;
+        width: 100%;
         max-width: 100%;
-        width: auto;
+        height: auto;
+        max-height: 360px;
+        object-fit: contain;
+        object-position: center;
     }
 
     .services-grid {
