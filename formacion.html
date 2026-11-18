@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Formación académica y perfil profesional de Diego Leonardo Rodríguez Polo, abogado.">
+
+    <title>Mi formación | Dr. Diego Leonardo Rodríguez Polo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .formation-hero {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 75px 7%;
+        }
+
+        .formation-hero h1 {
+            font-size: clamp(35px, 5vw, 48px);
+            margin-bottom: 15px;
+        }
+
+        .formation-hero p {
+            color: #dddddd;
+        }
+
+        .formation-content {
+            max-width: 950px;
+            margin: auto;
+            padding: 75px 7%;
+        }
+
+        .formation-section {
+            margin-bottom: 55px;
+        }
+
+        .formation-section h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 12px;
+        }
+
+        .formation-card {
+            background: var(--light);
+            padding: 25px;
+            margin-bottom: 18px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .formation-card h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .formation-card p {
+            color: var(--gray);
+        }
+
+        .formation-footer {
+            text-align: center;
+            padding: 45px 20px;
+            background: var(--navy);
+        }
+
+        .formation-footer .btn-primary {
+            display: inline-block;
+        }
+
+        @media (max-width: 650px) {
+            .formation-content {
+                padding: 55px 7%;
+            }
+
+            .formation-section h2 {
+                font-size: 26px;
+            }
+
+            .formation-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JUSTICIA<span>.</span></a>
+        </nav>
+    </header>
+
+    <section class="formation-hero">
+        <p class="subtitle">PERFIL PROFESIONAL</p>
+
+        <h1>Mi formación y experiencia</h1>
+
+        <p>
+            Formación académica, conocimientos y preparación profesional.
+        </p>
+    </section>
+
+    <main class="formation-content">
+
+        <section class="formation-section">
+
+            <h2>Formación académica</h2>
+
+            <article class="formation-card">
+                <h3>Especialista en Derecho Penal y Criminología</h3>
+                <p>Universidad Libre</p>
+            </article>
+
+            <article class="formation-card">
+                <h3>Abogado</h3>
+                <p>Universidad Libre</p>
+            </article>
+
+            <article class="formation-card">
+                <h3>Técnico en Programación de Software</h3>
+                <p>Servicio Nacional de Aprendizaje (SENA)</p>
+            </article>
+
+        </section>
+
+        <section class="formation-section">
+
+            <h2>Formación complementaria</h2>
+
+            <article class="formation-card">
+                <h3>Estudios de inglés</h3>
+                <p>Centro Colombo Americano</p>
+            </article>
+
+        </section>
+
+        <section class="formation-section">
+
+            <h2>Experiencia y perfil profesional</h2>
+
+            <article class="formation-card">
+                <h3>Ejercicio y orientación jurídica</h3>
+                <p>
+                    Orientación y asesoría jurídica en diferentes áreas
+                    del derecho, con énfasis en Derecho Penal,
+                    Derecho Civil, Derecho Constitucional,
+                    Derecho Administrativo, Derecho Laboral
+                    y Derecho de Familia.
+                </p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="formation-footer">
+
+        <a href="index.html" class="btn-primary">
+            ← Volver a la página principal
+        </a>
+
+        <p style="color: #aab2bc; margin-top: 25px;">
+            © <span id="current-year"></span>
+            Diego Leonardo Rodríguez Polo.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+    <script>
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
