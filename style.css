@@ -1,3 +1,4 @@
+
 /* =====================================
    CONFIGURACIÓN GENERAL
 ===================================== */
@@ -198,8 +199,8 @@ header {
     align-items: center;
 }
 
-/* La fotografía conserva sus proporciones y el borde
-   dorado se ajusta directamente a sus dimensiones. */
+/* La fotografía conserva sus proporciones
+   y el borde se ajusta a sus dimensiones. */
 
 .lawyer-photo {
     display: block;
@@ -367,6 +368,72 @@ header {
     font-size: 15px;
 }
 
+/* Campo oculto antispam */
+
+.honey-field {
+    position: absolute !important;
+    left: -9999px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* =====================================
+   CONFIRMACIÓN DEL FORMULARIO
+===================================== */
+
+.contact .form-feedback {
+    margin-top: 30px;
+    padding: 30px 25px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.contact .success-message {
+    background: var(--navy-light);
+    border: 1px solid var(--gold);
+}
+
+.success-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.contact .success-message h3 {
+    color: var(--gold);
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.contact .success-message p {
+    color: var(--white);
+    margin: 0;
+}
+
+.contact .error-message {
+    color: #ffb4b4;
+    background: var(--navy-light);
+    border: 1px solid #a94b4b;
+}
+
+.contact [hidden] {
+    display: none !important;
+}
+
+.contact button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
 /* =====================================
    PIE DE PÁGINA
 ===================================== */
@@ -420,6 +487,7 @@ footer {
 ===================================== */
 
 @media (max-width: 1000px) {
+
     header {
         padding: 20px 5%;
     }
@@ -454,6 +522,7 @@ footer {
 ===================================== */
 
 @media (max-width: 650px) {
+
     header {
         padding: 20px 5%;
     }
@@ -509,8 +578,8 @@ footer {
         gap: 35px;
     }
 
-    /* En móvil la foto mantiene su proporción y el borde
-       sigue el contorno real de la imagen. */
+    /* En móvil la fotografía mantiene
+       su proporción original. */
 
     .lawyer-photo {
         display: block;
@@ -546,6 +615,14 @@ footer {
         overflow-wrap: anywhere;
     }
 
+    .contact .form-feedback {
+        padding: 25px 18px;
+    }
+
+    .contact .success-message h3 {
+        font-size: 22px;
+    }
+
     .whatsapp {
         bottom: 18px;
         right: 15px;
@@ -567,6 +644,7 @@ textarea:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
