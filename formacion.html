@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,11 +20,17 @@
 
     <style>
 
+        /* PORTADA: MISMO FONDO DEL INDEX */
+
         .formation-hero {
-            background: var(--navy);
-            color: var(--white);
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             padding: 75px 7%;
+            color: var(--white);
         }
 
         .formation-hero h1 {
@@ -104,6 +111,11 @@
 
         @media (max-width: 650px) {
 
+            .formation-hero {
+                min-height: 350px;
+                padding: 55px 6%;
+            }
+
             .formation-content {
                 padding: 55px 6%;
             }
@@ -135,9 +147,9 @@
     </header>
 
 
-    <!-- PORTADA -->
+    <!-- PORTADA CON EL MISMO FONDO DEL INDEX -->
 
-    <section class="formation-hero">
+    <section class="hero formation-hero">
 
         <p class="subtitle">PERFIL PROFESIONAL</p>
 
@@ -220,7 +232,6 @@
             </article>
 
         </section>
-
 
 
         <!-- EXPERIENCIA PROFESIONAL -->
@@ -314,7 +325,6 @@
             </article>
 
         </section>
-
 
 
         <!-- FORMACIÓN ADICIONAL -->
@@ -417,7 +427,6 @@
         </section>
 
 
-
         <!-- IDIOMAS -->
 
         <section class="formation-section">
@@ -450,7 +459,6 @@
         </section>
 
 
-
         <!-- SERVICIO MILITAR -->
 
         <section class="formation-section">
@@ -478,7 +486,6 @@
             </article>
 
         </section>
-
 
 
         <!-- FORMACIÓN TÉCNICA -->
@@ -534,6 +541,8 @@
 
     </footer>
 
+
+    <!-- AÑO AUTOMÁTICO -->
 
     <script>
         document.getElementById("current-year").textContent =
