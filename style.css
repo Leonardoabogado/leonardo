@@ -1,4 +1,3 @@
-
 /* =====================================
    CONFIGURACIÓN GENERAL
 ===================================== */
@@ -200,7 +199,7 @@ header {
 }
 
 /* La fotografía conserva sus proporciones
-   y el borde se ajusta a sus dimensiones. */
+   y el borde dorado se ajusta a la imagen. */
 
 .lawyer-photo {
     display: block;
@@ -313,6 +312,14 @@ header {
     margin-bottom: 25px;
 }
 
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-details p {
+    margin-bottom: 8px;
+}
+
 .contact-details a {
     color: var(--gold);
     overflow-wrap: anywhere;
@@ -368,70 +375,51 @@ header {
     font-size: 15px;
 }
 
-/* Campo oculto antispam */
+.contact button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Campo antispam oculto */
 
 .honey-field {
-    position: absolute !important;
-    left: -9999px !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-/* =====================================
-   CONFIRMACIÓN DEL FORMULARIO
-===================================== */
-
-.contact .form-feedback {
-    margin-top: 30px;
-    padding: 30px 25px;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.contact .success-message {
-    background: var(--navy-light);
-    border: 1px solid var(--gold);
-}
-
-.success-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--gold);
-    border-radius: 50%;
-    color: var(--gold);
-    font-size: 27px;
-    font-weight: bold;
-}
-
-.contact .success-message h3 {
-    color: var(--gold);
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-.contact .success-message p {
-    color: var(--white);
-    margin: 0;
-}
-
-.contact .error-message {
-    color: #ffb4b4;
-    background: var(--navy-light);
-    border: 1px solid #a94b4b;
-}
-
-.contact [hidden] {
     display: none !important;
 }
 
-.contact button:disabled {
-    opacity: 0.65;
-    cursor: wait;
-    transform: none;
+/* Mensaje de envío exitoso */
+
+#mensaje-exito {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--navy-light);
+    border: 1px solid var(--gold);
+    text-align: center;
+}
+
+#mensaje-exito h3 {
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+#mensaje-exito p {
+    color: var(--white);
+}
+
+/* Mensaje de error */
+
+#mensaje-error {
+    color: #ffb4b4;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Ocultar elementos */
+
+#mensaje-exito[hidden],
+#mensaje-error[hidden],
+#contact-form[hidden] {
+    display: none !important;
 }
 
 /* =====================================
@@ -578,8 +566,8 @@ footer {
         gap: 35px;
     }
 
-    /* En móvil la fotografía mantiene
-       su proporción original. */
+    /* En móvil la foto conserva sus proporciones
+       y el borde sigue el contorno de la imagen. */
 
     .lawyer-photo {
         display: block;
@@ -613,14 +601,6 @@ footer {
 
     .contact-details {
         overflow-wrap: anywhere;
-    }
-
-    .contact .form-feedback {
-        padding: 25px 18px;
-    }
-
-    .contact .success-message h3 {
-        font-size: 22px;
     }
 
     .whatsapp {
