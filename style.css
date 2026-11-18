@@ -659,3 +659,27 @@ textarea:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+/* BOTONES SOBRE MÍ */
+
+.about-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.about-buttons .btn-primary {
+    text-align: center;
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+
+    .about-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
