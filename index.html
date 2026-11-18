@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -85,6 +86,7 @@
         </div>
 
         <div class="services-grid">
+
             <article class="service-card">
                 <div class="service-icon">♟</div>
                 <h3>Derecho Penal</h3>
@@ -126,12 +128,14 @@
                 <h3>Asesoría Jurídica</h3>
                 <p>Consultoría legal personalizada para personas y empresas.</p>
             </article>
+
         </div>
     </section>
 
     <!-- CONTACTO -->
     <section class="contact section" id="contacto">
         <div class="contact-content">
+
             <p class="subtitle">HABLEMOS DE TU CASO</p>
 
             <h2>¿Necesitas asesoría legal?</h2>
@@ -146,7 +150,13 @@
                 <a href="mailto:leonardo.abogado7@gmail.com">leonardo.abogado7@gmail.com</a>
             </p>
 
-            <form action="https://formsubmit.co/leonardo.abogado7@gmail.com" method="POST">
+            <!-- FORMULARIO DE CONTACTO -->
+            <form
+                id="contact-form"
+                action="https://formsubmit.co/ajax/leonardo.abogado7@gmail.com"
+                method="POST"
+            >
+
                 <input
                     type="text"
                     name="nombre"
@@ -178,10 +188,53 @@
                 ></textarea>
 
                 <input type="hidden" name="_subject" value="Nueva consulta jurídica">
-                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_captcha" value="false">
 
-                <button type="submit" class="btn-primary">Enviar consulta</button>
+                <!-- Protección básica contra spam -->
+                <input
+                    type="text"
+                    name="_honey"
+                    tabindex="-1"
+                    autocomplete="off"
+                    aria-hidden="true"
+                    class="honey-field"
+                >
+
+                <button type="submit" class="btn-primary" id="submit-button">
+                    Enviar consulta
+                </button>
+
             </form>
+
+            <!-- MENSAJE DE ENVÍO EXITOSO -->
+            <div
+                id="form-success"
+                class="form-feedback success-message"
+                role="status"
+                aria-live="polite"
+                hidden
+            >
+                <div class="success-icon">✓</div>
+
+                <h3>¡Gracias por contactarme!</h3>
+
+                <p>
+                    Tu solicitud ha sido enviada correctamente.
+                    Me pondré en contacto contigo lo antes posible.
+                </p>
+            </div>
+
+            <!-- MENSAJE DE ERROR -->
+            <div
+                id="form-error"
+                class="form-feedback error-message"
+                role="alert"
+                hidden
+            >
+                No fue posible enviar tu solicitud.
+                Por favor, verifica tu conexión e inténtalo nuevamente.
+            </div>
+
         </div>
     </section>
 
@@ -190,10 +243,15 @@
 <!-- PIE DE PÁGINA -->
 <footer>
     <div class="footer-content">
+
         <a class="logo" href="#inicio">JUSTICIA<span>.</span></a>
+
         <p>Dr. Diego Leonardo Rodríguez Polo</p>
+
         <p>Servicios jurídicos profesionales.</p>
+
         <p class="copyright">© 2027 Todos los derechos reservados.</p>
+
     </div>
 </footer>
 
@@ -207,6 +265,77 @@
 >
     WhatsApp
 </a>
+
+<!-- FUNCIONAMIENTO DEL FORMULARIO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("contact-form");
+    const button = document.getElementById("submit-button");
+
+    const successMessage = document.getElementById("form-success");
+    const errorMessage = document.getElementById("form-error");
+
+    form.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        button.disabled = true;
+        button.textContent = "Enviando...";
+
+        successMessage.hidden = true;
+        errorMessage.hidden = true;
+
+        try {
+
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            const result = await response.json();
+
+            if (
+                response.ok &&
+                (
+                    result.success === true ||
+                    result.success === "true"
+                )
+            ) {
+
+                form.reset();
+
+                form.hidden = true;
+
+                successMessage.hidden = false;
+
+            } else {
+
+                throw new Error("No se pudo confirmar el envío.");
+
+            }
+
+        } catch (error) {
+
+            errorMessage.hidden = false;
+
+            button.disabled = false;
+
+            button.textContent = "Enviar consulta";
+
+        }
+
+    });
+
+});
+</script>
 
 </body>
 </html>
