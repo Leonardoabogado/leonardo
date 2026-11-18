@@ -633,3 +633,37 @@ textarea:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+
+
+/* =====================================
+   FOTOGRAFÍA EN PÁGINA DE FORMACIÓN
+===================================== */
+
+.formation-photo-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 7% 0;
+}
+
+.formation-photo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+    object-position: center;
+    border: 2px solid var(--gold);
+}
+
+@media (max-width: 650px) {
+
+    .formation-photo-container {
+        padding: 30px 6% 0;
+    }
+
+    .formation-photo {
+        max-width: 100%;
+        max-height: 430px;
+    }
+}
