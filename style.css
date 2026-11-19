@@ -683,3 +683,11 @@ textarea:focus-visible {
     }
 
 }
+/* PROTECCIÓN DE LA FOTOGRAFÍA DEL ABOGADO */
+
+.lawyer-photo {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: auto;
+}
