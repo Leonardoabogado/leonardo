@@ -154,6 +154,69 @@
     color: var(--navy);
     transform: translateY(-2px);
 }
+        
+/* VENTANA EMERGENTE DE TARJETA PROFESIONAL */
+
+.card-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.90);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-modal.active {
+    display: flex;
+}
+
+.card-modal-content {
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-modal-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+.card-modal-close {
+    position: absolute;
+    top: -42px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 34px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.card-modal-close:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 650px) {
+    .card-modal-content {
+        max-width: 100%;
+    }
+
+    .card-modal-content img {
+        max-height: 80vh;
+    }
+}
+
     </style>
 </head>
 
@@ -235,9 +298,19 @@
 
                 <p>Pregrado.</p>
 
-                <p class="date">2021</p>
+                
+<p class="date">2021</p>
 
-            </article>
+<button
+    type="button"
+    class="thesis-link"
+    onclick="openCardModal()"
+>
+    <span>↗</span> Consultar tarjeta profesional
+</button>
+
+</article>
+
 
 
             <article class="formation-card">
@@ -591,6 +664,34 @@
 
     </main>
 
+<!-- VENTANA DE CONSULTA DE TARJETA PROFESIONAL -->
+
+<div
+    id="cardModal"
+    class="card-modal"
+    onclick="closeCardModal(event)"
+>
+    <div class="card-modal-content">
+
+        <button
+            type="button"
+            class="card-modal-close"
+            onclick="closeCardModal()"
+            aria-label="Cerrar imagen"
+        >
+            &times;
+        </button>
+
+        <img
+            src="imagenes/tarjeta-abogado.jpeg"
+            alt="Tarjeta profesional de abogado"
+            draggable="false"
+            oncontextmenu="return false;"
+        >
+
+    </div>
+</div>
+
 
     <!-- PIE DE PÁGINA -->
 
@@ -632,10 +733,34 @@
 
     <!-- AÑO AUTOMÁTICO -->
 
-    <script>
-        document.getElementById("current-year").textContent =
-            new Date().getFullYear();
-    </script>
+    
+<script>
+    document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+    function openCardModal() {
+        document.getElementById("cardModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeCardModal(event) {
+        if (
+            !event ||
+            event.target.id === "cardModal" ||
+            event.target.classList.contains("card-modal-close")
+        ) {
+            document.getElementById("cardModal").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeCardModal();
+        }
+    });
+</script>
+
 
 </body>
 </html>
