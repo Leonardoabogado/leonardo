@@ -682,12 +682,17 @@
             &times;
         </button>
 
-        <img
-            src="imagenes/tarjeta-abogado.jpeg"
-            alt="Tarjeta profesional de abogado"
-            draggable="false"
-            oncontextmenu="return false;"
-        >
+        
+<img
+    src="imagenes/tarjeta-abogado.jpeg"
+    alt="Tarjeta profesional de abogado"
+    draggable="false"
+    oncontextmenu="return false;"
+    ondragstart="return false;"
+    onselectstart="return false;"
+    ontouchstart="event.preventDefault();"
+>
+
 
     </div>
 </div>
@@ -759,6 +764,15 @@
             closeCardModal();
         }
     });
+    
+    // Bloquear menú contextual en toda la ventana de la tarjeta
+    document.getElementById("cardModal").addEventListener(
+        "contextmenu",
+        function(event) {
+            event.preventDefault();
+        }
+    );
+
 </script>
 
 
