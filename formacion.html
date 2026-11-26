@@ -132,7 +132,28 @@
                 font-size: 19px;
             }
         }
+/* BOTÓN DE CONSULTA DE TESIS */
+.thesis-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    padding: 12px 20px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
 
+.thesis-link:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-2px);
+}
     </style>
 </head>
 
@@ -184,7 +205,14 @@
                 <p>Posgrado.</p>
 
                 <p class="date">2022</p>
-
+<a
+    href="https://repository.unilibre.edu.co/items/4fdeba42-1357-41fd-9160-dc563fe07881"
+    class="thesis-link"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span>↗</span> Consultar tesis en el repositorio institucional
+</a>
             </article>
 
 
